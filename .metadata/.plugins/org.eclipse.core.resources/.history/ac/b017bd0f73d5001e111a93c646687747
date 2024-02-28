@@ -1,0 +1,56 @@
+package com.example.servlets;
+
+import java.io.IOException;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+public class AddProductServlet extends HttpServlet {
+
+    protected void doPost(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+        // Retrieve data from the form
+        String productName = request.getParameter("productName");
+        String description = request.getParameter("description");
+        double price = Double.parseDouble(request.getParameter("price"));
+        int quantity = Integer.parseInt(request.getParameter("quantity"));
+
+        // Database connection parameters
+        String jdbcURL = "jdbc:mysql://localhost:3306/mydatabase";
+        String jdbcUsername = "root";
+        String jdbcPassword = "password";
+
+        // SQL query to insert product data
+        String sql = "INSERT INTO products (product_name, description, price, quantity) VALUES (?, ?, ?, ?)";
+
+        try (Connection connection = DriverManager.getConnection(jdbcURL, jdbcUsername, jdbcPassword);
+             PreparedStatement preparedStatement = connection.prepareStatement(sql)) {
+            // Set parameters for the SQL statement
+            preparedStatement.setString(1, productName);
+            preparedStatement.setString(2, description);
+            preparedStatement.setDouble(3, price);
+            preparedStatement.setInt(4, quantity);
+
+            // Execute the query
+            int rowsInserted = preparedStatement.executeUpdate();
+
+            if (rowsInserted > 0) {
+                // Data inserted successfully
+                response.sendRedirect("success.html");
+            } else {
+                // Error handling
+                response.sendRedirect("error.html");
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+            // Error handling
+            response.sendRedirect("error.html");
+        }
+    }
+}

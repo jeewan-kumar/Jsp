@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<h2>Product Registration</h2>
+    <form action="AddProductServlet" method="post">
+    
+    	<label for="id">ID:</label><br>
+        <input type="text" id="id" name="id" required><br>
+    
+        <label for="productName">Product Name:</label><br>
+        <input type="text" id="productName" name="productName" required><br>
+        
+        <label for="description">Description:</label><br>
+        <textarea id="description" name="description" required></textarea><br>
+        
+        <label for="price">Price:</label><br>
+        <input type="number" id="price" name="price" step="0.01" min="0" required><br>
+        
+        <label for="quantity">Quantity:</label><br>
+        <input type="number" id="quantity" name="quantity" min="0" required><br>
+        
+        <input type="submit" value="Register">
+    </form>
+</body>
+</html>
