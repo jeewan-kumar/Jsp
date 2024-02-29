@@ -54,3 +54,8 @@
 0:0:0:0:0:0:0:1 - - [28/Feb/2024:11:02:26 +0530] "GET /Restaurant/ HTTP/1.1" 200 52
 0:0:0:0:0:0:0:1 - - [28/Feb/2024:11:02:38 +0530] "GET /Restaurant/Restaurant.html HTTP/1.1" 200 929
 0:0:0:0:0:0:0:1 - - [28/Feb/2024:11:02:59 +0530] "POST /Restaurant/restaurantservlet HTTP/1.1" 200 69
+127.0.0.1 - - [28/Feb/2024:11:12:36 +0530] "GET / HTTP/1.1" 404 752
+0:0:0:0:0:0:0:1 - - [28/Feb/2024:11:12:38 +0530] "GET /Student/ HTTP/1.1" 200 52
+0:0:0:0:0:0:0:1 - - [28/Feb/2024:11:12:46 +0530] "GET /Student/Student.htm HTTP/1.1" 404 775
+0:0:0:0:0:0:0:1 - - [28/Feb/2024:11:12:52 +0530] "GET /Student/Student.html HTTP/1.1" 200 916
+0:0:0:0:0:0:0:1 - - [28/Feb/2024:11:13:02 +0530] "POST /Student/studentservlet HTTP/1.1" 200 69

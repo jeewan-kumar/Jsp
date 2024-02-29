@@ -8,6 +8,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
+import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
@@ -38,6 +39,8 @@ public class LoginServlet extends HttpServlet {
                         writer.write("<html><body>");
                         writer.write("<h1>Login failed</h1>");
                         writer.write("</body></html>");
+                        RequestDispatcher dispatcher =req.getRequestDispatcher("Signup.html");
+        	            dispatcher.forward(req, resp);
                     }
                 }
             }
