@@ -2,6 +2,7 @@
 <section name="Workbench">
 	<section name="MavenProjectWizardLocationPage">
 		<list key="location">
+			<item value="D:\Adv. Java\User_App-servlet\src\main\webapp\Login.html"/>
 			<item value="D:\Adv. Java\First_Product"/>
 			<item value="D:\Adv. Java\student\src\main\java\com\jsp\student\Student.java"/>
 			<item value="D:\Adv. Java\student"/>
@@ -29,6 +30,7 @@
 	</section>
 	<section name="Maven2ProjectWizardArchifactPage">
 		<list key="package">
+			<item value="com.jsp.Web_App_servlet"/>
 			<item value="com.jsp.second_Employee"/>
 			<item value="com.jsp.Second"/>
 			<item value="com.jsp.First_Product"/>
@@ -38,6 +40,7 @@
 			<item value="com.jsp"/>
 		</list>
 		<list key="artifactId">
+			<item value="Web_App-servlet"/>
 			<item value="second_Employee"/>
 			<item value="Second"/>
 			<item value="First_Product"/>
