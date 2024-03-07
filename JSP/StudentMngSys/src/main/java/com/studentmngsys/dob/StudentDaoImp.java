@@ -69,7 +69,7 @@ public class StudentDaoImp implements StudentaDao {
     @Override
     public Student findStudentById(int rollno) {
         try {
-            PreparedStatement preparedStatement = connection.prepareStatement("SELECT * FROM student WHERE rollno=?");
+            PreparedStatement preparedStatement = connection.prepareStatement("select * from student where rollno=?");
             preparedStatement.setInt(1, rollno);
             ResultSet resultSet = preparedStatement.executeQuery();
 
